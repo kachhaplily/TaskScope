@@ -1,0 +1,19 @@
+<mat-drawer-container class="sidebar-container">
+  <mat-drawer #drawer class="sidenav" mode="side" opened>
+         <app-navbar></app-navbar>
+
+    <!-- @if (showFiller) {
+      <app-navbar></app-navbar>
+    } -->
+   
+  </mat-drawer>
+
+  <div class="example-sidenav-content">
+    <div><button type="button" matButton  (click)="drawer.toggle()">
+      <mat-icon>{{ drawer.opened ? 'chevron_left' : 'chevron_right' }}</mat-icon>
+    </button></div>
+    <router-outlet></router-outlet>
+    
+  </div>
+
+</mat-drawer-container>

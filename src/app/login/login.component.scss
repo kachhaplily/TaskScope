@@ -1,0 +1,58 @@
+/* Main container */
+.login-wrapper {
+  display: flex;
+  height: 100vh;
+  background-color: #f8f9fb; /* off-white with blue tint */
+}
+
+/* Left image section */
+.login-image {
+  flex: 1;
+  background-color: #ffffff; /* light blue background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-image img {
+  width: 80%;
+  max-width: 1200px;
+  height: auto;
+}
+
+/* Right form section */
+.login-form-style {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f5f9ff; /* matching light off-white */
+}
+
+mat-card {
+  width: 350px;
+  padding: 20px;
+  background: white;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-title {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #1976d2; /* Material blue */
+}
+
+.full-width {
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+/* Responsive: hide image on small screens */
+@media (max-width: 768px) {
+  .login-wrapper {
+    flex-direction: column;
+  }
+  .login-image {
+    display: none;
+  }
+}

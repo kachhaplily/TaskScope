@@ -1,0 +1,10 @@
+<div class="slider-container">
+  <div class="login-image">
+    <img [src]="images[currentIndex]" alt="img1" />
+  </div>
+
+  <div class="slider-footer">
+    <button mat-raised-button color="primary" (click)="previous()">Previous</button>
+    <button mat-raised-button color="primary" (click)="next()">Next</button>
+  </div>
+</div>
