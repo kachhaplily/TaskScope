@@ -1,47 +1,50 @@
 <h2>Add New Task</h2>
 
 <form [formGroup]="taskForm" (ngSubmit)="onSubmit()" class="task-form">
-
   <!-- Task Title -->
   <mat-form-field appearance="outline" class="full-width">
     <mat-label>Task Title</mat-label>
-    <input matInput formControlName="title" placeholder="Enter task title" />
+    <input
+      matInput
+      formControlName="taskTitle"
+      placeholder="Enter task title"
+    />
   </mat-form-field>
 
   <!-- Task Description (Quill Editor) -->
-   <div>
-      <mat-label>Task Description</mat-label>
-      <div>
-      <quill-editor formControlName="description" [style]="{height: '200px'}" classes="full-width"></quill-editor>
-
-      </div>
-   </div>
-
+  <div>
+    <mat-label>Task Description</mat-label>
+    <div>
+      <quill-editor
+        formControlName="taskDescription"
+        [style]="{ height: '200px' }"
+        classes="full-width"
+      ></quill-editor>
+    </div>
+  </div>
 
   <!-- Priority -->
-   <div class="flex-container full-width">
-   <mat-form-field appearance="outline" >
-       <mat-label>Priority</mat-label>
-       <mat-select formControlName="priority">
-      @for (item of priorities; track $index) {
-          <mat-option [value]="item">{{ item }}</mat-option>
-      }
-       </mat-select>
-   </mat-form-field>
-  <!-- Due Date -->
-  <mat-form-field appearance="outline" >
-    <mat-label>Due Date</mat-label>
-    <input matInput [matDatepicker]="picker" formControlName="dueDate" />
-    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-    <mat-datepicker #picker></mat-datepicker>
-  </mat-form-field>
-   </div>
-  
+  <div class="flex-container full-width">
+    <mat-form-field appearance="outline">
+      <mat-label>Priority</mat-label>
+      <mat-select formControlName="priority">
+        @for (item of priorities; track $index) {
+        <mat-option [value]="item">{{ item }}</mat-option>
+        }
+      </mat-select>
+    </mat-form-field>
+    <!-- Due Date -->
+    <mat-form-field appearance="outline">
+      <mat-label>Due Date</mat-label>
+      <input matInput [matDatepicker]="picker" formControlName="dueDate" />
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+  </div>
 
   <!-- Buttons -->
   <div class="button-group">
     <button mat-button type="button">Cancel</button>
     <button mat-raised-button color="primary" type="submit">Save Task</button>
   </div>
-
 </form>

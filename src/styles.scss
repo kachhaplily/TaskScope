@@ -1,4 +1,38 @@
 /* You can add global styles to this file, and also import other style files */
-@import 'quill/dist/quill.snow.css';
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+@import "quill/dist/quill.snow.css";
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+/* Primary chip */
+.mdc-evolution-chip.primary,
+.mdc-evolution-chip.primary .mdc-evolution-chip__cell,
+.mdc-evolution-chip.primary .mdc-evolution-chip__action {
+  background-color: #1976d2 !important; /* Material blue 700 */
+  box-shadow: 0px 4px 8px rgba(25, 118, 210, 0.6);
+}
+
+/* Warn chip */
+.mdc-evolution-chip.warn,
+.mdc-evolution-chip.warn .mdc-evolution-chip__cell,
+.mdc-evolution-chip.warn .mdc-evolution-chip__action {
+  background-color: #9b1010 !important; /* Material red 700 */
+  box-shadow: 0px 4px 8px rgba(211, 47, 47, 0.6);
+}
+
+/* Accent chip */
+.mdc-evolution-chip.accent,
+.mdc-evolution-chip.accent .mdc-evolution-chip__cell,
+.mdc-evolution-chip.accent .mdc-evolution-chip__action {
+  background-color: var(--mdc-theme-accent, #03dac6) !important;
+  color: black !important;
+}
+.mat-mdc-standard-chip:not(.mdc-evolution-chip--disabled)
+  .mdc-evolution-chip__text-label {
+  color: #ffffff !important;
+}

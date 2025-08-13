@@ -14,10 +14,10 @@ export class AuthService {
 
   /**
    * method to login user
-   * @param login 
-   * @returns 
+   * @param login
+   * @returns
    */
   login(login:UserDto) :Observable<any>{
-    return this.httpClient.post(`${this.apiEndPoint}/user`, login);
+    return this.httpClient.get(`${this.apiEndPoint}/user/${login.userId}`);
   }
 }

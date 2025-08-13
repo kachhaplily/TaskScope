@@ -18,7 +18,7 @@ import { Router } from '@angular/router';
 export class LoginComponent {
   loginForm !: FormGroup;
 
-  
+
   wallpaperImages: string[] = [
 'https://images.pexels.com/photos/7550886/pexels-photo-7550886.jpeg' ,
 'https://cdni.iconscout.com/illustration/premium/thumb/business-task-management-5685838-4744556.png','https://img.freepik.com/free-vector/students-employees-adding-events-deadlines-calendar-app-young-people-using-time-organizer-planner-flat-illustration_74855-20735.jpg?semt=ais_hybrid&w=740&q=80' ];
@@ -26,7 +26,7 @@ export class LoginComponent {
   constructor(private fb: FormBuilder,private authService: AuthService
     ,private router: Router
   ) {
-   this.formInit(); 
+   this.formInit();
   }
 
   /**
@@ -40,7 +40,7 @@ export class LoginComponent {
   }
 
 
- 
+
 
   /**
    * Handle the login form submission.
@@ -49,7 +49,7 @@ export class LoginComponent {
     if (this.loginForm.valid) {
       this.authService.login(this.loginForm.value).subscribe({
         next: (response) => {
-          localStorage.setItem('user', JSON.stringify(response));
+          localStorage.setItem('userId', JSON.stringify(response.userId));
           this.router.navigate(['/dashboard']);
         },
         error: (error) => {

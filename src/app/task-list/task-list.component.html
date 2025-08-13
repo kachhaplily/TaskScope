@@ -1,1 +1,37 @@
-<p>task-list works!</p>
+<div class="grid">
+  <mat-card *ngFor="let task of tasks" class="task-card">
+    <mat-chip-set class="priority-chip-set">
+      <mat-chip
+        selected
+        class="priority-chip {{ priorityColor(task.priority) }}"
+      >
+        {{ task.priority }}
+      </mat-chip>
+    </mat-chip-set>
+
+    <mat-card-header>
+      <div mat-card-avatar class="avatar">
+        <mat-icon>assignment</mat-icon>
+      </div>
+      <mat-card-title class="line-clamp-1" [matTooltip]="task.taskTitle">{{
+        task.taskTitle
+      }}</mat-card-title>
+      <mat-card-subtitle class="due">
+        <mat-icon class="due-icon" fontIcon="event"></mat-icon>
+        Due {{ task.dueDate || task.dueDate | date : "mediumDate" }}
+      </mat-card-subtitle>
+    </mat-card-header>
+
+    <mat-card-content>
+      <div
+        class="description line-clamp-3"
+        [innerHTML]="task.taskDescription"
+      ></div>
+    </mat-card-content>
+
+    <mat-card-actions [align]="'end'">
+      <button mat-stroked-button color="primary">View</button>
+      <button mat-flat-button color="primary">Mark Done</button>
+    </mat-card-actions>
+  </mat-card>
+</div>
